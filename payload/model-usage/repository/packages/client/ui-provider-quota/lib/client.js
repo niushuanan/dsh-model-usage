@@ -4,10 +4,10 @@ window.__ModuleLoader__.load({
 		var module = { exports: {} };
 		var exports = module.exports;
 		Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
-		let react_jsx_runtime = require("react/jsx-runtime");
 		let react = require("react");
 		let _deepseek_ai_dsh_client_ui_primitives = require("@deepseek-ai/dsh-client-ui-primitives");
-		//#region lib/types/client/brandAssets.js
+		let react_jsx_runtime = require("react/jsx-runtime");
+		//#region src/client/brandAssets.ts
 		/** Public brand artwork from each provider's official brand surface. */
 		const BRAND_LOGOS = {
 			deepseek: "https://unpkg.com/@lobehub/icons-static-svg@1.94.0/icons/deepseek-color.svg",
@@ -16,8 +16,8 @@ window.__ModuleLoader__.load({
 			codex: "https://unpkg.com/@lobehub/icons-static-svg@1.94.0/icons/openai.svg"
 		};
 		//#endregion
-		//#region \0dsh-css:dsh-source/packages/client/ui-provider-quota/src/client/QuotaAction.module.css.mjs
-		const css = ".akVvOW_root{position:relative}.akVvOW_trigger{min-height:28px;color:var(--dsh-session-header-action-color,var(--dsw-alias-label-secondary));font-size:var(--dsh-session-header-action-font-size,12px);font-weight:var(--dsh-session-header-action-font-weight,400);line-height:var(--dsh-session-header-action-line-height,18px);cursor:pointer;background:0 0;border:0;border-radius:6px;align-items:center;gap:3px;padding:3px 2px;display:inline-flex}.akVvOW_trigger:hover,.akVvOW_trigger:focus-visible{color:var(--dsh-session-header-action-hover-color,var(--dsw-alias-label-primary))}.akVvOW_trigger svg{transition:transform .12s}.akVvOW_triggerOpen{transform:rotate(180deg)}.akVvOW_triggerIcon{flex:none;width:14px;height:14px;display:inline-block}.akVvOW_count{margin:0 2px 0 1px}.akVvOW_panel{z-index:100;box-sizing:border-box;border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-1);width:min(520px,100vw - 24px);max-height:calc(100vh - 78px);box-shadow:var(--dsw-shadow-lv3);--dsh-scrollbar-thumb:var(--dsw-alias-scrollbar-bg-l2);--dsh-scrollbar-thumb-hover:var(--dsw-alias-scrollbar-hover-l2);border-radius:14px;position:fixed;top:58px;left:50%;overflow:auto;transform:translate(-50%)}.akVvOW_panelHeader{z-index:1;background:var(--dsw-alias-bg-layer-1);grid-template-columns:1fr auto 32px;align-items:center;gap:12px;min-height:48px;padding:0 14px;display:grid;position:sticky;top:0}.akVvOW_iconButton{width:30px;height:30px;color:var(--dsw-alias-label-secondary);cursor:pointer;background:0 0;border:0;border-radius:8px;justify-content:center;align-items:center;padding:0;display:inline-flex}.akVvOW_iconButton:hover:not(:disabled),.akVvOW_iconButton:focus-visible:not(:disabled){background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-primary)}.akVvOW_iconButton:disabled{opacity:.56;cursor:default}.akVvOW_title{color:var(--dsw-alias-label-primary);letter-spacing:.02em;margin:0;font-size:16px;font-weight:650;line-height:28px}.akVvOW_autoRefresh{color:var(--dsw-alias-label-tertiary);white-space:nowrap;font-size:12px;line-height:20px}.akVvOW_providerList{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding:0 12px 8px;display:grid;position:relative}.akVvOW_providerList[data-populated=true]:before,.akVvOW_providerList[data-populated=true]:after{z-index:1;content:\"\";pointer-events:none;background:var(--dsw-alias-border-l2);position:absolute}.akVvOW_providerList[data-populated=true]:before{width:1px;top:12px;bottom:20px;left:50%;transform:translate(-.5px)}.akVvOW_providerList[data-populated=true]:after{height:1px;top:calc(50% - 4px);left:24px;right:24px;transform:translateY(-.5px)}.akVvOW_providerCard{box-sizing:border-box;background:0 0;border:0;border-radius:0;min-width:0;min-height:112px;padding:10px 16px 9px;position:relative}.akVvOW_cardTop{align-items:center;gap:9px;min-width:0;margin-bottom:7px;display:flex}.akVvOW_logoFrame{box-sizing:border-box;width:34px;height:34px;box-shadow:inset 0 0 0 1px color-mix(in srgb, var(--dsw-alias-label-primary) 12%, transparent);background:#fff;border:0;border-radius:8px;flex:none;justify-content:center;align-items:center;padding:0;display:inline-flex;overflow:hidden}.akVvOW_logo{object-fit:contain;border-radius:0;width:28px;height:28px;display:block}.akVvOW_logoFrame[data-provider-id=kimi],.akVvOW_logoFrame[data-provider-id=zai]{background:#242424}.akVvOW_logoFrame[data-provider-id=kimi] .akVvOW_logo,.akVvOW_logoFrame[data-provider-id=zai] .akVvOW_logo{width:100%;height:100%}.akVvOW_providerName{color:var(--dsw-alias-label-primary);white-space:nowrap;text-overflow:ellipsis;font-size:15px;font-weight:600;line-height:28px;overflow:hidden}.akVvOW_planBadge{background:var(--dsw-alias-bg-layer-3);color:var(--dsw-alias-label-secondary);letter-spacing:.02em;white-space:nowrap;border-radius:999px;flex:none;margin-left:auto;padding:1px 6px;font-size:9px;font-weight:600;line-height:18px}.akVvOW_metrics,.akVvOW_metricsSingle{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;display:grid}.akVvOW_metricsSingle{grid-template-columns:1fr}.akVvOW_metric,.akVvOW_moneyMetric,.akVvOW_providerMessage{box-sizing:border-box;min-width:0}.akVvOW_metric,.akVvOW_moneyMetric{flex-direction:column;justify-content:center;gap:3px;display:flex}.akVvOW_metrics>.akVvOW_metric:first-child{padding-right:11px}.akVvOW_metrics>.akVvOW_metric+.akVvOW_metric{border-left:1px solid var(--dsw-alias-border-l2);padding-left:11px}.akVvOW_moneyMetric{flex-direction:row;justify-content:space-between;align-items:baseline}.akVvOW_metricTop{justify-content:space-between;align-items:baseline;gap:6px;display:flex}.akVvOW_metricLabel{color:var(--dsw-alias-label-tertiary);white-space:nowrap;font-size:11px;font-weight:400;line-height:20px}.akVvOW_metricValue,.akVvOW_moneyValue{color:var(--dsw-alias-label-primary);font-variant-numeric:tabular-nums;font-size:16px;font-weight:600;line-height:28px}.akVvOW_moneyValue{font-size:21px;line-height:28px}.akVvOW_metricMissing{color:var(--dsw-alias-label-tertiary);font-size:12px;line-height:20px}.akVvOW_metric[data-unused=true] .akVvOW_metricValue{color:var(--dsw-alias-label-secondary)}.akVvOW_bar{background:var(--dsw-alias-border-l2);border-radius:999px;width:100%;height:4px;overflow:hidden}.akVvOW_resetTime{color:var(--dsw-alias-label-secondary);font-variant-numeric:tabular-nums;white-space:nowrap;text-overflow:ellipsis;font-size:11px;line-height:16px;overflow:hidden}.akVvOW_barFill{border-radius:inherit;background:var(--dsw-alias-button-info-fill);height:100%}.akVvOW_providerMessage{color:var(--dsw-alias-label-secondary);flex-direction:column;gap:4px;font-size:16px;line-height:22px;display:flex}.akVvOW_providerMessage small{color:var(--dsw-alias-label-tertiary);font-size:12px;line-height:18px}.akVvOW_stateLine{color:var(--dsw-alias-label-tertiary);text-align:center;grid-column:1/3;padding:70px 24px;font-size:14px}.akVvOW_footer{min-height:30px;color:var(--dsw-alias-label-tertiary);justify-content:center;align-items:center;gap:5px;font-size:12px;line-height:20px;display:flex}.akVvOW_inlineError{color:var(--dsw-alias-label-secondary);margin-left:10px}.akVvOW_refreshSpin{animation:.76s linear infinite akVvOW_spin;display:inline-flex}@keyframes akVvOW_spin{to{transform:rotate(360deg)}}@media (width<=620px){.akVvOW_panel{border-radius:14px;width:calc(100vw - 20px);max-height:calc(100vh - 56px);top:48px}.akVvOW_panelHeader{grid-template-columns:1fr 32px;gap:10px;min-height:48px;padding:0 12px}.akVvOW_autoRefresh{display:none}.akVvOW_providerList{grid-template-columns:1fr}.akVvOW_providerList[data-populated=true]:before,.akVvOW_providerList[data-populated=true]:after{display:none}.akVvOW_providerCard+.akVvOW_providerCard:before{content:\"\";pointer-events:none;background:var(--dsw-alias-border-l2);height:1px;position:absolute;top:0;left:12px;right:12px}.akVvOW_stateLine{grid-column:1}}";
+		//#region \0dsh-css:/Users/zhuanghongkai/Desktop/迭代DSH/xiaozhuang-dsh/packages/client/ui-provider-quota/src/client/QuotaAction.module.css.mjs
+		const css = ".NVjOta_root{position:relative}.NVjOta_trigger{min-height:28px;color:var(--dsh-session-header-action-color,var(--dsw-alias-label-secondary));font-size:var(--dsh-session-header-action-font-size,12px);font-weight:var(--dsh-session-header-action-font-weight,400);line-height:var(--dsh-session-header-action-line-height,18px);cursor:pointer;background:0 0;border:0;border-radius:6px;align-items:center;gap:3px;padding:3px 2px;display:inline-flex}.NVjOta_trigger:hover,.NVjOta_trigger:focus-visible{color:var(--dsh-session-header-action-hover-color,var(--dsw-alias-label-primary))}.NVjOta_trigger svg{transition:transform .12s}.NVjOta_triggerOpen{transform:rotate(180deg)}.NVjOta_triggerIcon{flex:none;width:14px;height:14px;display:inline-block}.NVjOta_count{margin:0 2px 0 1px}.NVjOta_panel{z-index:100;box-sizing:border-box;border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-1);width:min(520px,100vw - 24px);max-height:calc(100vh - 78px);box-shadow:var(--dsw-shadow-lv3);--dsh-scrollbar-thumb:var(--dsw-alias-scrollbar-bg-l2);--dsh-scrollbar-thumb-hover:var(--dsw-alias-scrollbar-hover-l2);border-radius:14px;position:fixed;top:58px;left:50%;overflow:auto;transform:translate(-50%)}.NVjOta_panelHeader{z-index:1;background:var(--dsw-alias-bg-layer-1);grid-template-columns:1fr auto 32px;align-items:center;gap:12px;min-height:48px;padding:0 14px;display:grid;position:sticky;top:0}.NVjOta_iconButton{width:30px;height:30px;color:var(--dsw-alias-label-secondary);cursor:pointer;background:0 0;border:0;border-radius:8px;justify-content:center;align-items:center;padding:0;display:inline-flex}.NVjOta_iconButton:hover:not(:disabled),.NVjOta_iconButton:focus-visible:not(:disabled){background:var(--dsw-alias-bg-layer-2);color:var(--dsw-alias-label-primary)}.NVjOta_iconButton:disabled{opacity:.56;cursor:default}.NVjOta_title{color:var(--dsw-alias-label-primary);letter-spacing:.02em;margin:0;font-size:16px;font-weight:650;line-height:28px}.NVjOta_autoRefresh{color:var(--dsw-alias-label-tertiary);white-space:nowrap;font-size:12px;line-height:20px}.NVjOta_providerList{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding:0 12px 8px;display:grid;position:relative}.NVjOta_providerList[data-populated=true]:before,.NVjOta_providerList[data-populated=true]:after{z-index:1;content:\"\";pointer-events:none;background:var(--dsw-alias-border-l2);position:absolute}.NVjOta_providerList[data-populated=true]:before{width:1px;top:12px;bottom:20px;left:50%;transform:translate(-.5px)}.NVjOta_providerList[data-populated=true]:after{height:1px;top:calc(50% - 4px);left:24px;right:24px;transform:translateY(-.5px)}.NVjOta_providerCard{box-sizing:border-box;background:0 0;border:0;border-radius:0;min-width:0;min-height:112px;padding:10px 16px 9px;position:relative}.NVjOta_cardTop{align-items:center;gap:9px;min-width:0;margin-bottom:7px;display:flex}.NVjOta_logoFrame{box-sizing:border-box;width:34px;height:34px;box-shadow:inset 0 0 0 1px color-mix(in srgb, var(--dsw-alias-label-primary) 12%, transparent);background:#fff;border:0;border-radius:8px;flex:none;justify-content:center;align-items:center;padding:0;display:inline-flex;overflow:hidden}.NVjOta_logo{object-fit:contain;border-radius:0;width:28px;height:28px;display:block}.NVjOta_logoFrame[data-provider-id=kimi],.NVjOta_logoFrame[data-provider-id=zai]{background:#242424}.NVjOta_logoFrame[data-provider-id=kimi] .NVjOta_logo,.NVjOta_logoFrame[data-provider-id=zai] .NVjOta_logo{width:100%;height:100%}.NVjOta_providerName{color:var(--dsw-alias-label-primary);white-space:nowrap;text-overflow:ellipsis;font-size:15px;font-weight:600;line-height:28px;overflow:hidden}.NVjOta_planBadge{background:var(--dsw-alias-bg-layer-3);color:var(--dsw-alias-label-secondary);letter-spacing:.02em;white-space:nowrap;border-radius:999px;flex:none;margin-left:auto;padding:1px 6px;font-size:9px;font-weight:600;line-height:18px}.NVjOta_metrics,.NVjOta_metricsSingle{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;display:grid}.NVjOta_metricsSingle{grid-template-columns:1fr}.NVjOta_metric,.NVjOta_moneyMetric,.NVjOta_providerMessage{box-sizing:border-box;min-width:0}.NVjOta_metric,.NVjOta_moneyMetric{flex-direction:column;justify-content:center;gap:3px;display:flex}.NVjOta_metrics>.NVjOta_metric:first-child{padding-right:11px}.NVjOta_metrics>.NVjOta_metric+.NVjOta_metric{border-left:1px solid var(--dsw-alias-border-l2);padding-left:11px}.NVjOta_moneyMetric{flex-direction:row;justify-content:space-between;align-items:baseline}.NVjOta_metricTop{justify-content:space-between;align-items:baseline;gap:6px;display:flex}.NVjOta_metricLabel{color:var(--dsw-alias-label-tertiary);white-space:nowrap;font-size:11px;font-weight:400;line-height:20px}.NVjOta_metricValue,.NVjOta_moneyValue{color:var(--dsw-alias-label-primary);font-variant-numeric:tabular-nums;font-size:16px;font-weight:600;line-height:28px}.NVjOta_moneyValue{font-size:21px;line-height:28px}.NVjOta_metricMissing{color:var(--dsw-alias-label-tertiary);font-size:12px;line-height:20px}.NVjOta_metric[data-unused=true] .NVjOta_metricValue{color:var(--dsw-alias-label-secondary)}.NVjOta_bar{background:var(--dsw-alias-border-l2);border-radius:999px;width:100%;height:4px;overflow:hidden}.NVjOta_resetTime{color:var(--dsw-alias-label-secondary);font-variant-numeric:tabular-nums;white-space:nowrap;text-overflow:ellipsis;font-size:11px;line-height:16px;overflow:hidden}.NVjOta_barFill{border-radius:inherit;background:var(--dsw-alias-button-info-fill);height:100%}.NVjOta_providerMessage{color:var(--dsw-alias-label-secondary);flex-direction:column;gap:4px;font-size:16px;line-height:22px;display:flex}.NVjOta_providerMessage small{color:var(--dsw-alias-label-tertiary);font-size:12px;line-height:18px}.NVjOta_stateLine{color:var(--dsw-alias-label-tertiary);text-align:center;grid-column:1/3;padding:70px 24px;font-size:14px}.NVjOta_footer{min-height:30px;color:var(--dsw-alias-label-tertiary);justify-content:center;align-items:center;gap:5px;font-size:12px;line-height:20px;display:flex}.NVjOta_inlineError{color:var(--dsw-alias-label-secondary);margin-left:10px}.NVjOta_refreshSpin{animation:.76s linear infinite NVjOta_spin;display:inline-flex}@keyframes NVjOta_spin{to{transform:rotate(360deg)}}@media (width<=620px){.NVjOta_panel{border-radius:14px;width:calc(100vw - 20px);max-height:calc(100vh - 56px);top:48px}.NVjOta_panelHeader{grid-template-columns:1fr 32px;gap:10px;min-height:48px;padding:0 12px}.NVjOta_autoRefresh{display:none}.NVjOta_providerList{grid-template-columns:1fr}.NVjOta_providerList[data-populated=true]:before,.NVjOta_providerList[data-populated=true]:after{display:none}.NVjOta_providerCard+.NVjOta_providerCard:before{content:\"\";pointer-events:none;background:var(--dsw-alias-border-l2);height:1px;position:absolute;top:0;left:12px;right:12px}.NVjOta_stateLine{grid-column:1}}";
 		const tagId = "@deepseek-ai/dsh-client-ui-provider-quota/QuotaAction.module.css";
 		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId) + "]") === null) {
 			const tag = document.createElement("style");
@@ -27,44 +27,44 @@ window.__ModuleLoader__.load({
 			document.head.appendChild(tag);
 		}
 		var QuotaAction_module_css_default = {
-			"autoRefresh": "akVvOW_autoRefresh",
-			"bar": "akVvOW_bar",
-			"barFill": "akVvOW_barFill",
-			"cardTop": "akVvOW_cardTop",
-			"count": "akVvOW_count",
-			"footer": "akVvOW_footer",
-			"iconButton": "akVvOW_iconButton",
-			"inlineError": "akVvOW_inlineError",
-			"logo": "akVvOW_logo",
-			"logoFrame": "akVvOW_logoFrame",
-			"metric": "akVvOW_metric",
-			"metricLabel": "akVvOW_metricLabel",
-			"metricMissing": "akVvOW_metricMissing",
-			"metricTop": "akVvOW_metricTop",
-			"metricValue": "akVvOW_metricValue",
-			"metrics": "akVvOW_metrics",
-			"metricsSingle": "akVvOW_metricsSingle",
-			"moneyMetric": "akVvOW_moneyMetric",
-			"moneyValue": "akVvOW_moneyValue",
-			"panel": "akVvOW_panel",
-			"panelHeader": "akVvOW_panelHeader",
-			"planBadge": "akVvOW_planBadge",
-			"providerCard": "akVvOW_providerCard",
-			"providerList": "akVvOW_providerList",
-			"providerMessage": "akVvOW_providerMessage",
-			"providerName": "akVvOW_providerName",
-			"refreshSpin": "akVvOW_refreshSpin",
-			"resetTime": "akVvOW_resetTime",
-			"root": "akVvOW_root",
-			"spin": "akVvOW_spin",
-			"stateLine": "akVvOW_stateLine",
-			"title": "akVvOW_title",
-			"trigger": "akVvOW_trigger",
-			"triggerIcon": "akVvOW_triggerIcon",
-			"triggerOpen": "akVvOW_triggerOpen"
+			"autoRefresh": "NVjOta_autoRefresh",
+			"bar": "NVjOta_bar",
+			"barFill": "NVjOta_barFill",
+			"cardTop": "NVjOta_cardTop",
+			"count": "NVjOta_count",
+			"footer": "NVjOta_footer",
+			"iconButton": "NVjOta_iconButton",
+			"inlineError": "NVjOta_inlineError",
+			"logo": "NVjOta_logo",
+			"logoFrame": "NVjOta_logoFrame",
+			"metric": "NVjOta_metric",
+			"metricLabel": "NVjOta_metricLabel",
+			"metricMissing": "NVjOta_metricMissing",
+			"metricTop": "NVjOta_metricTop",
+			"metricValue": "NVjOta_metricValue",
+			"metrics": "NVjOta_metrics",
+			"metricsSingle": "NVjOta_metricsSingle",
+			"moneyMetric": "NVjOta_moneyMetric",
+			"moneyValue": "NVjOta_moneyValue",
+			"panel": "NVjOta_panel",
+			"panelHeader": "NVjOta_panelHeader",
+			"planBadge": "NVjOta_planBadge",
+			"providerCard": "NVjOta_providerCard",
+			"providerList": "NVjOta_providerList",
+			"providerMessage": "NVjOta_providerMessage",
+			"providerName": "NVjOta_providerName",
+			"refreshSpin": "NVjOta_refreshSpin",
+			"resetTime": "NVjOta_resetTime",
+			"root": "NVjOta_root",
+			"spin": "NVjOta_spin",
+			"stateLine": "NVjOta_stateLine",
+			"title": "NVjOta_title",
+			"trigger": "NVjOta_trigger",
+			"triggerIcon": "NVjOta_triggerIcon",
+			"triggerOpen": "NVjOta_triggerOpen"
 		};
 		//#endregion
-		//#region lib/types/client/QuotaAction.js
+		//#region src/client/QuotaAction.tsx
 		const API_URL = "/plugins/ui-provider-quota/api/usage";
 		const AUTO_REFRESH_MS = 5 * 6e4;
 		function rowPercent(row) {
@@ -98,33 +98,33 @@ window.__ModuleLoader__.load({
 			const percent = rowPercent(row);
 			const percentText = percent === void 0 ? t("quota.not-reported") : t("quota.percent", { percent: Math.round(percent) });
 			const resetText = formatResetAt(row?.resetAt, percent, t);
-			return (0, react_jsx_runtime.jsxs)("div", {
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 				className: QuotaAction_module_css_default.metric,
 				"data-unused": percent === 0 ? "true" : void 0,
 				children: [
-					(0, react_jsx_runtime.jsxs)("div", {
+					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 						className: QuotaAction_module_css_default.metricTop,
-						children: [(0, react_jsx_runtime.jsx)("span", {
+						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 							className: QuotaAction_module_css_default.metricLabel,
 							children: label
-						}), (0, react_jsx_runtime.jsx)("span", {
+						}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 							className: percent === void 0 ? QuotaAction_module_css_default.metricMissing : QuotaAction_module_css_default.metricValue,
 							children: percentText
 						})]
 					}),
-					(0, react_jsx_runtime.jsx)("div", {
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
 						className: QuotaAction_module_css_default.bar,
 						role: "progressbar",
 						"aria-label": `${label}，${percentText}`,
 						"aria-valuemin": 0,
 						"aria-valuemax": 100,
 						"aria-valuenow": percent === void 0 ? void 0 : Math.round(percent),
-						children: percent === void 0 || percent === 0 ? null : (0, react_jsx_runtime.jsx)("div", {
+						children: percent === void 0 || percent === 0 ? null : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
 							className: QuotaAction_module_css_default.barFill,
 							style: { width: `${Math.max(0, Math.min(percent, 100))}%` }
 						})
 					}),
-					(0, react_jsx_runtime.jsx)("span", {
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 						className: QuotaAction_module_css_default.resetTime,
 						children: resetText
 					})
@@ -145,50 +145,50 @@ window.__ModuleLoader__.load({
 			const displayName = provider.id === "kimi" ? "KIMI" : provider.id === "zai" ? "GLM" : provider.id === "codex" ? "GPT" : provider.name;
 			const plan = displayPlan(provider);
 			const logo = BRAND_LOGOS[provider.id];
-			return (0, react_jsx_runtime.jsxs)("article", {
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("article", {
 				className: QuotaAction_module_css_default.providerCard,
 				role: "listitem",
-				children: [(0, react_jsx_runtime.jsxs)("div", {
+				children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 					className: QuotaAction_module_css_default.cardTop,
 					children: [
-						(0, react_jsx_runtime.jsx)("span", {
+						/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 							className: QuotaAction_module_css_default.logoFrame,
 							"data-provider-id": provider.id,
-							children: logo === void 0 ? null : (0, react_jsx_runtime.jsx)("img", {
+							children: logo === void 0 ? null : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("img", {
 								className: QuotaAction_module_css_default.logo,
 								src: logo,
 								alt: ""
 							})
 						}),
-						(0, react_jsx_runtime.jsx)("span", {
+						/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 							className: QuotaAction_module_css_default.providerName,
 							children: displayName
 						}),
-						plan === void 0 ? null : (0, react_jsx_runtime.jsx)("span", {
+						plan === void 0 ? null : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 							className: QuotaAction_module_css_default.planBadge,
 							children: plan
 						})
 					]
-				}), provider.status !== "ok" ? (0, react_jsx_runtime.jsxs)("div", {
+				}), provider.status !== "ok" ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 					className: QuotaAction_module_css_default.providerMessage,
 					title: provider.error,
-					children: [(0, react_jsx_runtime.jsx)("span", { children: provider.status === "no-key" ? t("status.no-key") : t("status.error") }), (0, react_jsx_runtime.jsx)("small", { children: provider.status === "no-key" ? t("status.connect") : t("status.retry") })]
-				}) : provider.money !== void 0 ? (0, react_jsx_runtime.jsxs)("div", {
+					children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { children: provider.status === "no-key" ? t("status.no-key") : t("status.error") }), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("small", { children: provider.status === "no-key" ? t("status.connect") : t("status.retry") })]
+				}) : provider.money !== void 0 ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 					className: QuotaAction_module_css_default.moneyMetric,
-					children: [(0, react_jsx_runtime.jsx)("span", {
+					children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 						className: QuotaAction_module_css_default.metricLabel,
 						children: t("money.total")
-					}), (0, react_jsx_runtime.jsx)("span", {
+					}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 						className: QuotaAction_module_css_default.moneyValue,
 						children: formatMoney(provider.money.currency, provider.money.total)
 					})]
-				}) : (0, react_jsx_runtime.jsxs)("div", {
+				}) : /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 					className: provider.id === "codex" ? QuotaAction_module_css_default.metricsSingle : QuotaAction_module_css_default.metrics,
-					children: [provider.id === "codex" ? null : (0, react_jsx_runtime.jsx)(WindowMetric, {
+					children: [provider.id === "codex" ? null : /* @__PURE__ */ (0, react_jsx_runtime.jsx)(WindowMetric, {
 						label: t("quota.rolling-5h"),
 						row: fiveHour,
 						t
-					}), (0, react_jsx_runtime.jsx)(WindowMetric, {
+					}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)(WindowMetric, {
 						label: t("quota.weekly"),
 						row: weekly,
 						t
@@ -231,6 +231,14 @@ window.__ModuleLoader__.load({
 					window.clearInterval(timer);
 				};
 			}, [load, open]);
+			(0, react.useEffect)(() => {
+				if (!open || data === void 0) return;
+				if (Date.now() - data.updatedAt > AUTO_REFRESH_MS) load(true);
+			}, [
+				data,
+				load,
+				open
+			]);
 			const close = () => {
 				setOpen(false);
 				triggerRef.current?.focus();
@@ -244,11 +252,11 @@ window.__ModuleLoader__.load({
 				hour: "2-digit",
 				minute: "2-digit"
 			});
-			return (0, react_jsx_runtime.jsxs)("div", {
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 				ref: rootRef,
 				className: QuotaAction_module_css_default.root,
 				onKeyDown,
-				children: [(0, react_jsx_runtime.jsxs)("button", {
+				children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("button", {
 					ref: triggerRef,
 					type: "button",
 					className: QuotaAction_module_css_default.trigger,
@@ -260,33 +268,33 @@ window.__ModuleLoader__.load({
 						if (next && data === void 0) load(false, true);
 					},
 					children: [
-						(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconDataOutline16, {
+						/* @__PURE__ */ (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconDataOutline16, {
 							className: QuotaAction_module_css_default.triggerIcon,
 							size: 14
 						}),
-						(0, react_jsx_runtime.jsx)("span", {
+						/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 							className: QuotaAction_module_css_default.count,
 							children: t("trigger.label")
 						}),
-						(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconChevronDownOutline14, { className: open ? QuotaAction_module_css_default.triggerOpen : void 0 })
+						/* @__PURE__ */ (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconChevronDownOutline14, { className: open ? QuotaAction_module_css_default.triggerOpen : void 0 })
 					]
-				}), open ? (0, react_jsx_runtime.jsxs)("section", {
+				}), open ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("section", {
 					className: QuotaAction_module_css_default.panel,
 					role: "dialog",
 					"aria-label": t("panel.aria"),
 					children: [
-						(0, react_jsx_runtime.jsxs)("header", {
+						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("header", {
 							className: QuotaAction_module_css_default.panelHeader,
 							children: [
-								(0, react_jsx_runtime.jsx)("h2", {
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("h2", {
 									className: QuotaAction_module_css_default.title,
 									children: t("panel.title")
 								}),
-								(0, react_jsx_runtime.jsx)("span", {
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 									className: QuotaAction_module_css_default.autoRefresh,
 									children: t("auto-refresh")
 								}),
-								(0, react_jsx_runtime.jsx)("button", {
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
 									type: "button",
 									className: QuotaAction_module_css_default.iconButton,
 									"aria-label": t("refresh"),
@@ -294,42 +302,42 @@ window.__ModuleLoader__.load({
 									onClick: () => {
 										load(true, true);
 									},
-									children: (0, react_jsx_runtime.jsx)("span", {
+									children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 										className: loading ? QuotaAction_module_css_default.refreshSpin : void 0,
-										children: (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconRefreshOutline16, { size: 20 })
+										children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconRefreshOutline16, { size: 20 })
 									})
 								})
 							]
 						}),
-						(0, react_jsx_runtime.jsxs)("div", {
+						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 							className: QuotaAction_module_css_default.providerList,
 							role: "list",
 							"data-populated": data?.providers.length ? "true" : void 0,
 							children: [
-								data === void 0 && !loadError ? (0, react_jsx_runtime.jsx)("div", {
+								data === void 0 && !loadError ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
 									className: QuotaAction_module_css_default.stateLine,
 									children: t("refreshing")
 								}) : null,
-								loadError && data === void 0 ? (0, react_jsx_runtime.jsx)("div", {
+								loadError && data === void 0 ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
 									className: QuotaAction_module_css_default.stateLine,
 									children: t("load.error")
 								}) : null,
-								data?.providers.map((provider) => (0, react_jsx_runtime.jsx)(ProviderCard, {
+								data?.providers.map((provider) => /* @__PURE__ */ (0, react_jsx_runtime.jsx)(ProviderCard, {
 									provider,
 									t
 								}, provider.id))
 							]
 						}),
-						(0, react_jsx_runtime.jsxs)("footer", {
+						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("footer", {
 							className: QuotaAction_module_css_default.footer,
 							children: [
-								(0, react_jsx_runtime.jsx)("span", { children: updatedAt === void 0 ? t("refreshing") : t("updated.at", { time: updatedAt }) }),
-								(0, react_jsx_runtime.jsx)("span", {
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { children: updatedAt === void 0 ? t("refreshing") : t("updated.at", { time: updatedAt }) }),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 									"aria-hidden": "true",
 									children: "·"
 								}),
-								(0, react_jsx_runtime.jsx)("span", { children: t("reset.timezone") }),
-								loadError && data !== void 0 ? (0, react_jsx_runtime.jsx)("span", {
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { children: t("reset.timezone") }),
+								loadError && data !== void 0 ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 									className: QuotaAction_module_css_default.inlineError,
 									children: t("refresh.failed")
 								}) : null
@@ -340,7 +348,7 @@ window.__ModuleLoader__.load({
 			});
 		}
 		//#endregion
-		//#region lib/types/client/locales.js
+		//#region src/client/locales.ts
 		/** The usage panel is intentionally Chinese-only; provider brands stay Latin. */
 		const NS = "quota";
 		const zh = {
@@ -370,7 +378,7 @@ window.__ModuleLoader__.load({
 		};
 		const en = { ...zh };
 		//#endregion
-		//#region lib/types/client/index.js
+		//#region src/client/index.ts
 		/** Required services for locale registration and header-slot contribution. */
 		const inject = ["slots", "locale"];
 		/**

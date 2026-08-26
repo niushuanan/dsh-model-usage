@@ -1,7 +1,45 @@
-import { access, readFile } from "node:fs/promises";
-import { spawn } from "node:child_process";
+import { access, mkdir, readFile, rename, writeFile } from "node:fs/promises";
+import { dirname, join, resolve } from "node:path";
 import { homedir } from "node:os";
-import { join } from "node:path";
+import { spawn } from "node:child_process";
+//#region ../../util/home-paths/src/index.ts
+/** Directory name for the default DeepSeek Harness home under the OS home. */
+const DSH_HOME_DIR_NAME = ".dsh";
+/** Environment variable that overrides the default DeepSeek Harness home. */
+const DSH_HOME_ENV = "DSH_HOME";
+/**
+* Resolve the default DeepSeek Harness home using Node's platform path rules.
+* @returns the absolute default harness home path.
+*/
+function defaultDshHome() {
+	return join(homedir(), DSH_HOME_DIR_NAME);
+}
+/**
+* Expand supported tilde prefixes against the operating-system home.
+* @param path - configured path that may begin with `~`, `~/`, or `~\`.
+* @returns the expanded path, or the original value when no supported prefix is present.
+*/
+function expandHomePath(path) {
+	if (path === "~") return homedir();
+	if (path.startsWith("~/") || path.startsWith("~\\")) return join(homedir(), path.slice(2));
+	return path;
+}
+/**
+* Resolve the single-root DeepSeek Harness home.
+*
+* Precedence, highest first: an explicit configured path, `$DSH_HOME`, then
+* `~/.dsh`. The harness keeps all user data under one root. An empty or
+* whitespace-only `$DSH_HOME` is treated as unset, so a blank override never
+* resolves the home to the current working directory.
+* @param configured - explicit harness-home override, which has highest precedence.
+* @param env - environment mapping used to read `DSH_HOME`.
+* @returns the normalized absolute harness home path.
+*/
+function resolveDshHome(configured, env = process.env) {
+	const fromEnv = env[DSH_HOME_ENV];
+	return resolve(expandHomePath(configured ?? (fromEnv !== void 0 && fromEnv.trim().length > 0 ? fromEnv : defaultDshHome())));
+}
+//#endregion
 //#region lib/types/quota.js
 /**
 * Provider quota data layer (node half): resolves API keys from the local
@@ -538,27 +576,69 @@ async function collectUsage() {
 * half call vendor APIs without CORS or key exposure — keys never leave the
 * host, and the response carries no key material.
 *
-* The snapshot is cached for five minutes per process; `?force=1` bypasses.
+* Caching is the latency contract for the panel: the newest snapshot lives in
+* memory for five minutes, is mirrored to `~/.dsh/provider-quota-cache.json`
+* so the first open after a restart is instant, and an expired entry is served
+* immediately while one background revalidation refreshes it. Only `?force=1`
+* (the refresh button and the open-state poll) collects against the vendors
+* on the critical path; a cold start with no cached snapshot anywhere is the
+* one case that still waits for collection.
 */
 /** The route mount needs the web carrier service. */
 const inject = ["webServer"];
 const ROUTE_PATH = "/plugins/ui-provider-quota/api";
 const ZCODE_ICON_PATH = new URL("../assets/zcode.png", import.meta.url);
 const CACHE_TTL_MS = 5 * 6e4;
+const CACHE_PATH = join(resolveDshHome(), "provider-quota-cache.json");
 let cached;
 let inflight;
-async function usageSnapshot(force) {
-	if (!force && cached !== void 0 && cached.expiresAt > Date.now()) return cached.snapshot;
-	inflight ??= collectUsage().then((snapshot) => {
+let diskLoad;
+/** Best-effort disk mirror; persistence failures only cost startup speed. */
+async function persistCache(snapshot) {
+	const temporaryPath = `${CACHE_PATH}.tmp`;
+	try {
+		await mkdir(dirname(CACHE_PATH), { recursive: true });
+		await writeFile(temporaryPath, JSON.stringify(snapshot), "utf8");
+		await rename(temporaryPath, CACHE_PATH);
+	} catch {}
+}
+/** Load the disk mirror exactly once per process with `expiresAt: 0` — served instantly, then revalidated. */
+function ensureDiskLoaded() {
+	diskLoad ??= (async () => {
+		try {
+			const parsed = JSON.parse(await readFile(CACHE_PATH, "utf8"));
+			const providers = parsed?.providers;
+			if (typeof parsed?.updatedAt === "number" && Array.isArray(providers)) cached = {
+				snapshot: parsed,
+				expiresAt: 0
+			};
+		} catch {}
+	})();
+	return diskLoad;
+}
+/** One shared collection pass; concurrent callers wait on the same flight. */
+function revalidate() {
+	inflight ??= collectUsage().then(async (snapshot) => {
 		cached = {
 			snapshot,
 			expiresAt: Date.now() + CACHE_TTL_MS
 		};
+		await persistCache(snapshot);
 		return snapshot;
 	}).finally(() => {
 		inflight = void 0;
 	});
 	return inflight;
+}
+async function usageSnapshot(force) {
+	if (force) return revalidate();
+	await ensureDiskLoaded();
+	if (cached !== void 0) {
+		if (cached.expiresAt > Date.now()) return cached.snapshot;
+		revalidate();
+		return cached.snapshot;
+	}
+	return revalidate();
 }
 function send(res, status, body) {
 	res.statusCode = status;
@@ -605,6 +685,7 @@ async function handler(req, res) {
 /** Host plugin body: mount the usage route for the lifetime of the fiber. */
 function apply(ctx) {
 	ctx.effect(() => {
+		ensureDiskLoaded();
 		return ctx.webServer.register({
 			kind: "prefix",
 			path: ROUTE_PATH,

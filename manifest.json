@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "kind": "xiaozhuang-dsh-plugin-export",
-  "createdAt": "2026-08-26T11:46:44.411Z",
-  "sourceCommit": "49b1c5207b1556515752c6bf9e7902c1a5964ad9",
+  "createdAt": "2026-08-26T19:53:13.229Z",
+  "sourceCommit": "bb99a1aa41ee8329b48b90a108776888db171fcc",
   "plugins": [
     {
       "id": "model-usage",
@@ -24,13 +24,13 @@
   "files": [
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/README.md",
-      "size": 4416,
-      "sha256": "a12d4b2a9ebf37dadc91702698ae9d5f3d8ff1a76131590c619956ad30a6caf4"
+      "size": 4644,
+      "sha256": "15b0f147af4b14f06c6a51531f8bc6a682eabe9893adbf78d71c609ffb3ac239"
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/README.zh.md",
-      "size": 4125,
-      "sha256": "08aff9e63ce55c3a3ccb613126eba73ce65b39d281eb9ee3833ca38f8fc6162f"
+      "size": 4301,
+      "sha256": "93f14936fadf57e52eec64de31b86ec1cd576761d4dcc870c501de12a9266883"
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/assets/zcode.png",
@@ -39,13 +39,13 @@
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/client.js",
-      "size": 23066,
-      "sha256": "87958aadc175401561c1240024c5cb240c71c94a4d4112b6845ceefabe567d6d"
+      "size": 23959,
+      "sha256": "9219077aad0de67c56b438cc6a7a15720d7127d7067059dd233634fc6a8fa2ff"
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/index.js",
-      "size": 18949,
-      "sha256": "3e1b9269f3c0dc3d1617d8559c9e046a549ce6a9e56888db7374eab691360deb"
+      "size": 22271,
+      "sha256": "07adf0adcbacea4ece60792fef27376a25ff4e58abf61e454858f5fcdeaeff6b"
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/invariant.js",
@@ -79,8 +79,8 @@
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/types/index.d.ts",
-      "size": 834,
-      "sha256": "df0bab4f2c67db96ce4f79483eb575e62a7870a003c07b2dbc443bd42d4ba457"
+      "size": 1273,
+      "sha256": "5acddcf8c9a394961446c32a1c16bf4fdd083cef433dc826ba937a1dfb0586c2"
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/types/invariant.d.ts",
@@ -104,8 +104,8 @@
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/client/QuotaAction.tsx",
-      "size": 10495,
-      "sha256": "f00b7ae273a739be15d2f76c3bcb94793b7b58b53dc97b3b42e6ea3303da9cb3"
+      "size": 10935,
+      "sha256": "866ad44ec8f2f31a456ca91759ef4ab04e776ce23f233a6d85b8dbcaff49852f"
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/client/brandAssets.ts",
@@ -129,8 +129,8 @@
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/index.ts",
-      "size": 3332,
-      "sha256": "2dc1b907988d7eb7a70a18742411de79fba97308cdfb61477e7c592ac0a3e804"
+      "size": 5774,
+      "sha256": "6e6275a89d69f29e7661d7d6bc40b99a4a11698002297fed3e2a2dda686ec932"
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/invariant.ts",
@@ -144,8 +144,8 @@
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/tsconfig.json",
-      "size": 615,
-      "sha256": "3eccd4e6fc843386920b500432cafb9ce953ba2601370af9004639a49a58e1cf"
+      "size": 665,
+      "sha256": "4edd77ac8509a1ff4e31bf30adcb81cfa99450d8a774a75a1018817f1e5fd56a"
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/tsdown.config.ts",
