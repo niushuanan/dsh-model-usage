@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "kind": "xiaozhuang-dsh-plugin-export",
-  "createdAt": "2026-08-26T19:53:13.229Z",
-  "sourceCommit": "bb99a1aa41ee8329b48b90a108776888db171fcc",
+  "createdAt": "2026-08-27T16:32:05.412Z",
+  "sourceCommit": "cd0bc6911a9482fddedb37036b23b965f6ceb36f",
   "plugins": [
     {
       "id": "model-usage",
@@ -39,8 +39,8 @@
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/client.js",
-      "size": 23959,
-      "sha256": "9219077aad0de67c56b438cc6a7a15720d7127d7067059dd233634fc6a8fa2ff"
+      "size": 24039,
+      "sha256": "aef0693ac31d7816a6aab4eb22047bd9a3aa99d56f71ee3b8ef7dafbc17977e8"
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/index.js",
@@ -99,8 +99,8 @@
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/client/QuotaAction.module.css",
-      "size": 7749,
-      "sha256": "79e0b153b9ad124138883431b874f379d34cac23110143a05ed77829d780726c"
+      "size": 8019,
+      "sha256": "decd91eef843dff0193baf454147f091a6d077b05f930b967fd447c860461e60"
     },
     {
       "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/client/QuotaAction.tsx",
