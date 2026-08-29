@@ -4,7 +4,7 @@
  * Data arrives over the plugin's same-origin usage route, so the half holds
  * no keys and no state beyond popover visibility and the last snapshot.
  */
-import type { ClientContext } from '@deepseek-ai/dsh-client-runtime/client';
+import type { ClientContext } from '@deepseek-ai/dsh-api-session-controller/client';
 import { type QuotaKey } from './locales.ts';
 declare module '@deepseek-ai/dsh-client-ui-slots' {
     interface LocaleNamespaceMap {

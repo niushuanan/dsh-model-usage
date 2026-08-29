@@ -204,21 +204,41 @@ window.__ModuleLoader__.load({
 			const [loadError, setLoadError] = (0, react.useState)(false);
 			const rootRef = (0, react.useRef)(null);
 			const triggerRef = (0, react.useRef)(null);
-			const inflightRef = (0, react.useRef)(false);
+			const inflightRef = (0, react.useRef)();
 			(0, _deepseek_ai_dsh_client_ui_primitives.useDismissOnOutsidePointer)(rootRef, open, setOpen);
 			const load = (0, react.useCallback)(async (force, showLoading = false) => {
-				if (inflightRef.current) return;
-				inflightRef.current = true;
+				const existing = inflightRef.current;
+				if (existing !== void 0) {
+					if (!showLoading) return;
+					setLoading(true);
+					try {
+						await existing;
+					} finally {
+						setLoading(false);
+					}
+					return;
+				}
 				if (showLoading) setLoading(true);
+				const request = (async () => {
+					try {
+						const resp = await fetch(API_URL + (force ? "?force=1" : ""), { cache: "no-store" });
+						if (!resp.ok) throw new Error("HTTP " + String(resp.status));
+						return await resp.json();
+					} catch {
+						return;
+					}
+				})();
+				inflightRef.current = request;
 				try {
-					const resp = await fetch(API_URL + (force ? "?force=1" : ""), { cache: "no-store" });
-					if (!resp.ok) throw new Error("HTTP " + String(resp.status));
-					setData(await resp.json());
-					setLoadError(false);
-				} catch {
-					setLoadError(true);
+					const next = await request;
+					if (inflightRef.current === request) inflightRef.current = void 0;
+					if (next === void 0) setLoadError(true);
+					else {
+						setData(next);
+						setLoadError(false);
+					}
 				} finally {
-					inflightRef.current = false;
+					if (inflightRef.current === request) inflightRef.current = void 0;
 					if (showLoading) setLoading(false);
 				}
 			}, []);

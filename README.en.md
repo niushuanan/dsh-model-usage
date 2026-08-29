@@ -2,9 +2,9 @@
 
 English | [中文](README.md)
 
-[![DSH Plugin](https://img.shields.io/badge/DSH-Plugin-111111)](https://github.com/niushuanan/xiaozhuang-dsh) [![Release](https://img.shields.io/badge/release-xiaozhuang--v0.4.2-2563eb)](https://github.com/niushuanan/dsh-model-usage/releases/tag/xiaozhuang-v0.4.2) [![MIT](https://img.shields.io/badge/license-MIT-16a34a)](LICENSE)
+[![DSH Plugin](https://img.shields.io/badge/DSH-Plugin-111111)](https://github.com/niushuanan/xiaozhuang-dsh) [![Release](https://img.shields.io/badge/release-xiaozhuang--v0.4.3-2563eb)](https://github.com/niushuanan/dsh-model-usage/releases/tag/xiaozhuang-v0.4.3) [![MIT](https://img.shields.io/badge/license-MIT-16a34a)](LICENSE)
 
-Inspect model quotas, periods, and refresh state by provider in Settings, with data loaded only when the user opens the page.
+Inspect model quotas, periods, and refresh state by provider in Settings. Manual refresh now shows progress immediately, even when a background refresh is already running.
 
 <p align="center"><img src="docs/14-model-usage.webp" alt="Usage cards for multiple model providers" width="800"></p>
 
@@ -24,4 +24,4 @@ Inspect model quotas, periods, and refresh state by provider in Settings, with d
 
 ## Source and license
 
-This repository is a one-way distribution mirror of [Xiaozhuang DSH](https://github.com/niushuanan/xiaozhuang-dsh), not an independent development source. It is synchronized from main-repository commit [`49b1c5207b`](https://github.com/niushuanan/xiaozhuang-dsh/commit/49b1c5207b1556515752c6bf9e7902c1a5964ad9) and released as [`xiaozhuang-v0.4.2`](https://github.com/niushuanan/dsh-model-usage/releases/tag/xiaozhuang-v0.4.2). Licensed under the [MIT License](LICENSE).
+This repository is a one-way distribution mirror of [Xiaozhuang DSH](https://github.com/niushuanan/xiaozhuang-dsh), not an independent development source. It is synchronized from main-repository commit [`149c96fdc1`](https://github.com/niushuanan/xiaozhuang-dsh/commit/149c96fdc1518fdd076a0d974647717dd1f217b3) and released as [`xiaozhuang-v0.4.3`](https://github.com/niushuanan/dsh-model-usage/releases/tag/xiaozhuang-v0.4.3). Licensed under the [MIT License](LICENSE).
