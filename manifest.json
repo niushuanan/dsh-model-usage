@@ -1,8 +1,12 @@
 {
   "schemaVersion": 1,
   "kind": "xiaozhuang-dsh-plugin-export",
-  "createdAt": "2026-08-29T06:45:48.282Z",
-  "sourceCommit": "149c96fdc1518fdd076a0d974647717dd1f217b3",
+  "createdAt": "2026-10-06T18:40:04.058033+00:00",
+  "sourceCommit": "efbbbc6a1977cf4559bf306221533eb16393664c",
+  "sourceRepository": "https://github.com/niushuanan/xiaozhuang-dsh",
+  "repository": "https://github.com/niushuanan/dsh-model-usage",
+  "targetHarness": "0.2.1-alpha.1",
+  "upgradeWorkflow": "https://github.com/oh-my-dsh/dsh-plugin-upgrade-skill/",
   "plugins": [
     {
       "id": "model-usage",
@@ -10,165 +14,273 @@
       "rows": [
         {
           "id": "ui-provider-quota",
-          "name": "@deepseek-ai/dsh-client-ui-provider-quota"
+          "name": "./lib/index.js"
         }
       ],
       "sources": [
         {
-          "kind": "repository",
-          "path": "packages/client/ui-provider-quota"
+          "kind": "product",
+          "path": "plugins/model-usage"
         }
-      ]
+      ],
+      "version": "0.2.0"
     }
   ],
   "files": [
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/README.md",
+      "path": "payload/model-usage/product/plugins/model-usage/README.i18n.yaml",
+      "size": 443,
+      "sha256": "be5c58013770528890221c7ac7706d40c696803e7496c08b22804b7782f0755b"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/README.md",
       "size": 4644,
       "sha256": "15b0f147af4b14f06c6a51531f8bc6a682eabe9893adbf78d71c609ffb3ac239"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/README.zh.md",
+      "path": "payload/model-usage/product/plugins/model-usage/README.zh.md",
       "size": 4301,
       "sha256": "93f14936fadf57e52eec64de31b86ec1cd576761d4dcc870c501de12a9266883"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/assets/zcode.png",
+      "path": "payload/model-usage/product/plugins/model-usage/assets/zcode.png",
       "size": 215707,
       "sha256": "edd87a182097389b0f59c07f8de283dbe433c9d37cd6e9a2a372611516ab81eb"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/client.js",
-      "size": 24512,
-      "sha256": "2853d0b25db1e5132c971415d53b779e75375a3dbd16d0df4d3ed015364e39b2"
+      "path": "payload/model-usage/product/plugins/model-usage/cordis.patch.yml",
+      "size": 65,
+      "sha256": "d7fe02b9ba6151baac4b525bd508e75c60305cd5d70efbbcae4c0e5f64b70c16"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/index.js",
-      "size": 20660,
-      "sha256": "727dc60cf7b490278cc5a1102ff6af92ad3f116f9ed05af324082e2287905ca2"
+      "path": "payload/model-usage/product/plugins/model-usage/lib/client.js",
+      "size": 24640,
+      "sha256": "d61ab27fea6a96f07028bdd9b559761cf476d5ea418d2edb218269e0bc079194"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/invariant.js",
-      "size": 1010,
-      "sha256": "2f25c906de1dd9fdd5c15649fb74ddf8f68e7f59c240de50f727ee3a85742f3e"
+      "path": "payload/model-usage/product/plugins/model-usage/lib/client.js.map",
+      "size": 23963,
+      "sha256": "893204edd4ee2eb43a07208557f3ff129354fa598ba3eb800ddd2de3b359d2cd"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/types/client/QuotaAction.d.ts",
+      "path": "payload/model-usage/product/plugins/model-usage/lib/index.js",
+      "size": 20648,
+      "sha256": "ebeb5624f5df9dc9150aa1a4f10bd6dc08729663c6c7652aa8aedbad2b581747"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/QuotaAction.d.ts",
       "size": 509,
       "sha256": "aac28b2ebc8c4afb67abb4812ede66e21222c7503aaca55e1d5ed48cc4779582"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/types/client/brandAssets.d.ts",
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/QuotaAction.d.ts.map",
+      "size": 398,
+      "sha256": "082bea8078639010ac71f41894d17bb4724c6167d97a5df68de03c9c2bbbf74d"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/QuotaAction.js",
+      "size": 10951,
+      "sha256": "5adf5a36ebbc26a37afa7259f71239f5b0d61ffe5fbc6212153c9d4b5e68779b"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/QuotaAction.js.map",
+      "size": 11071,
+      "sha256": "efd5b238ae50f23dc57cc5583692c64569a4a9be5dd208f9a0ac8c27d842e0d8"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/brandAssets.d.ts",
       "size": 172,
       "sha256": "f27c20c743abe9da9bbf79930a457c471f4f9557438ef0b79ac2043386c85265"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/types/client/index.d.ts",
-      "size": 992,
-      "sha256": "e4b98c38553d7ea6759a885fafc359e75dedc8afdb4a882ba0a9b84fa522bfb1"
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/brandAssets.d.ts.map",
+      "size": 202,
+      "sha256": "c1b4a3423615e69e1e5ff395a8dd406c4214b7b5b988f533b8bbea153218c81f"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/types/client/locales.d.ts",
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/brandAssets.js",
+      "size": 459,
+      "sha256": "99bc1b9b22da5561cb5e1125f90ae56ac9861643844ee19a3bbb2a842e50f00a"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/brandAssets.js.map",
+      "size": 273,
+      "sha256": "c7334302a014ac7ebb1e4be8ea0dbd10825284736a3ed7fe170651210d9fb5a8"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/index.d.ts",
+      "size": 976,
+      "sha256": "89e8a1ae86469cc2eca35b2afbcb4a41c878698f997d4c549c72112abdcf9412"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/index.d.ts.map",
+      "size": 484,
+      "sha256": "fbf11d686ec78e4827d5a49447b0b747c18f9524feb55ae86e57e6871e055f7c"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/index.js",
+      "size": 803,
+      "sha256": "6c60215f18597a1edeb725a9656b97a0f841a87d64ff8e9da95d8aeb8dc817ed"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/index.js.map",
+      "size": 704,
+      "sha256": "f4d0df04e5939729fce96daae2d5b7dd0e49a23b928e38c6401f7047bdb98fe5"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/locales.d.ts",
       "size": 1480,
       "sha256": "cf9830d52282c4ac18191ed8ee8798f5cfea8c58c680561ef93b5658f1582675"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/types/client/usageIcon.d.ts",
-      "size": 3014,
-      "sha256": "139a81fceba839090bb1fa1f325233e895f3df8508e4caed4de267c03f7d3145"
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/locales.d.ts.map",
+      "size": 324,
+      "sha256": "f788299c8610d6b95fdb7cc6c86eab910aa8d39b2467486b190c62a6cb29d09c"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/types/index.d.ts",
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/locales.js",
+      "size": 1198,
+      "sha256": "6c17c2d094e5c5bd62c4d647b046bf4b157a48691187aa3080d0290988c85e33"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/client/locales.js.map",
+      "size": 772,
+      "sha256": "78589ec9020d2e6691eb153f85e5993fb128d197f17f085b4130f13cfef25266"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/index.d.ts",
       "size": 1273,
       "sha256": "5acddcf8c9a394961446c32a1c16bf4fdd083cef433dc826ba937a1dfb0586c2"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/types/invariant.d.ts",
-      "size": 705,
-      "sha256": "a2266c1377136d9740099ee7d0af74229c61c22bd7d509832a24d6d13ff224a9"
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/index.d.ts.map",
+      "size": 350,
+      "sha256": "72ae64e619901ea06dea2b376935ed4a9a71bf530f12bd17a6f36cd4544709a0"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/lib/types/quota.d.ts",
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/index.js",
+      "size": 5399,
+      "sha256": "507136160ae01b59aca188770c894a8b4e51080f96e5aa12f334e4f43829b9ec"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/index.js.map",
+      "size": 4451,
+      "sha256": "ff1a7a3b7068d0d602ed941735a056090a10cb738da73a93c690884f7dfd5cd0"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/quota.d.ts",
       "size": 3253,
       "sha256": "d7c9886ae31eff123c3883ed22d73ce8334ef7e59b456e2f202b8a85fd2d5513"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/package.json",
-      "size": 2480,
-      "sha256": "b13ed53b0bbcffc38b094e2666b7ace6b5ce483a5dd6fdb64c7db703f284a6f5"
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/quota.d.ts.map",
+      "size": 2022,
+      "sha256": "948eee22a059ae6084229c93ac55ce2884c4b5e49fcfad55542f225be8f788b3"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/client/QuotaAction.module.css",
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/quota.js",
+      "size": 20986,
+      "sha256": "e1479a9a90b1e1911fa17a7dceba423a80e8e9197c298f142de4416e5d4bcc65"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/lib/types/quota.js.map",
+      "size": 19147,
+      "sha256": "d6f81abc076f867022b0d0ff5a82fbad8ecff45a12f064df338aa7ed5d759eea"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/package.json",
+      "size": 2341,
+      "sha256": "f15614731b68f0a4d5f03e82c9c490864cb25db123300c75b992ace8d3321454"
+    },
+    {
+      "path": "payload/model-usage/product/plugins/model-usage/src/client/QuotaAction.module.css",
       "size": 8019,
       "sha256": "decd91eef843dff0193baf454147f091a6d077b05f930b967fd447c860461e60"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/client/QuotaAction.tsx",
-      "size": 11730,
-      "sha256": "6c4fc8318c17d3ce9c56403370333984e3cf77b15f305174f92590f8ba96bd07"
+      "path": "payload/model-usage/product/plugins/model-usage/src/client/QuotaAction.tsx",
+      "size": 11760,
+      "sha256": "e8318aab62b2754f2aceb83f158c1ce7acf2098d7ec4373734368fc20ca49e32"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/client/brandAssets.ts",
+      "path": "payload/model-usage/product/plugins/model-usage/src/client/brandAssets.ts",
       "size": 435,
       "sha256": "a3d62a84d934d4f0aea8de7f8ddb40cc6cde674a9a1f48ee2d143e2f355c7778"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/client/index.ts",
-      "size": 1534,
-      "sha256": "9843085a2681f0ea18b2022894d67abbc416d3c1ca9104f7a30290a295a47065"
+      "path": "payload/model-usage/product/plugins/model-usage/src/client/index.ts",
+      "size": 1518,
+      "sha256": "066eaa8bbddca258b0a9ca2c0f22722c7213c3d79f1096fe9819034a3371f5b0"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/client/locales.ts",
+      "path": "payload/model-usage/product/plugins/model-usage/src/client/locales.ts",
       "size": 1192,
       "sha256": "947979375524ee9a86f0460549441afef4f8352be8f786e44f68619f12a5731e"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/css-modules.d.ts",
+      "path": "payload/model-usage/product/plugins/model-usage/src/css-modules.d.ts",
       "size": 123,
       "sha256": "e28410d74a0d763364c04fa690c2ca2202ad3019c74f8f5205e8dc6cba69c02f"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/index.ts",
+      "path": "payload/model-usage/product/plugins/model-usage/src/index.ts",
       "size": 5774,
       "sha256": "6e6275a89d69f29e7661d7d6bc40b99a4a11698002297fed3e2a2dda686ec932"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/invariant.ts",
-      "size": 1185,
-      "sha256": "a44b5e820ff1810b5d92db81a2c7a6fd7b882bf4433855a5ec1a47dff2dff328"
-    },
-    {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/src/quota.ts",
+      "path": "payload/model-usage/product/plugins/model-usage/src/quota.ts",
       "size": 22650,
       "sha256": "4d9fce39fdc976e71c93c1878de43bfa0186e7a27af705063df83fc41c7fade7"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/tsconfig.host.json",
-      "size": 468,
-      "sha256": "c7dc4a6aaf0c77cd4188a80b9c62c02da15b2baa8a008399a87aa72870e2a73a"
+      "path": "payload/model-usage/product/plugins/model-usage/tsconfig.host.json",
+      "size": 299,
+      "sha256": "5142d63e1748637694e539645be73a6984af3334699167fdafcea6733a03da39"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/tsconfig.json",
-      "size": 748,
-      "sha256": "f7185fe8c9a42916820fba66dc22d76270a94d2b9f7b754c978c84fbe0d697d2"
+      "path": "payload/model-usage/product/plugins/model-usage/tsconfig.json",
+      "size": 313,
+      "sha256": "4c69d5461299c5728a4eac54b5151a756cf118de37ea9e6cc4e6cac547493dca"
     },
     {
-      "path": "payload/model-usage/repository/packages/client/ui-provider-quota/tsdown.config.ts",
-      "size": 175,
-      "sha256": "370f179150d56e62ee49b7158ee0cc95341e2f887676b3303ce0db484f446052"
+      "path": "payload/model-usage/product/plugins/model-usage/tsdown.config.ts",
+      "size": 162,
+      "sha256": "c17451e540f921d2b7609ec3529e25cd9a800f9dc8284a4554fc7d4b2eea40a1"
+    },
+    {
+      "path": "payload/shared/deliverable-file-path.patch",
+      "size": 2379,
+      "sha256": "65120b70cad2e196a4bee54911eced508f45818dc7dac1f1d7fd4a9de1ff3c73"
+    },
+    {
+      "path": "payload/shared/native-plugin-loading.patch",
+      "size": 23851,
+      "sha256": "136f4832023c8422906bbd86ede896ecb26d066931abf59db6fe2d094d4f2325"
+    },
+    {
+      "path": "payload/shared/session-state-compatibility.patch",
+      "size": 19961,
+      "sha256": "58bc1b86e2a347d0e29477877f96190379b04dc07bb3f37bd7f0f37fc3a3fef2"
+    },
+    {
+      "path": "payload/shared/settings-and-ui-slots.patch",
+      "size": 73183,
+      "sha256": "ce217a393adba9a3c3d1692ea14868a7d8f3d4e936a3895c216ae1f7d136a176"
     }
+  ],
+  "compatibilityPatches": [
+    "payload/shared/native-plugin-loading.patch",
+    "payload/shared/settings-and-ui-slots.patch",
+    "payload/shared/session-state-compatibility.patch",
+    "payload/shared/deliverable-file-path.patch"
   ],
   "excludes": [
     "node_modules",
-    "Git metadata",
-    "tests",
-    "caches",
     "credentials",
     "sessions",
-    "conversation history",
-    "user settings"
-  ],
-  "repository": "https://github.com/niushuanan/dsh-model-usage",
-  "releaseTag": "xiaozhuang-v0.4.3",
-  "sourceRepository": "https://github.com/niushuanan/xiaozhuang-dsh"
+    "attachments",
+    "user settings",
+    "caches",
+    "test outputs"
+  ]
 }
